@@ -24,12 +24,14 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelProtocol {
                     viewModel.tapSearch()
                 }
                 
+                .navigationDestination(isPresented: $viewModel.shouldNavigate) {
+                    ProductListView(query: viewModel.query, results: viewModel.results)
+                }
+                
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .navigationTitle("Buscar")
         }
-        
-
     }
 }
 

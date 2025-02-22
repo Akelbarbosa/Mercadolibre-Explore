@@ -1,0 +1,39 @@
+# Xcode
+DerivedData/
+*.xcworkspace/
+*.xcuserdata/
+*.xcodeproj/project.xcworkspace/
+
+# Swift Package Manager
+/.swiftpm/
+/.build/
+
+# CocoaPods
+Pods/
+*.lock
+
+# Carthage
+Carthage/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Archives
+*.xcarchive/
+
+# Swift Playgrounds
+timeline.xctimeline
+
+# Logs and User-Specific Files
+*.log
+.DS_Store
+
+# Env Files
+.env
+
+# Custom Buckets
+Bucket/
+*.bucket
