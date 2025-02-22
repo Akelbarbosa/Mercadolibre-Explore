@@ -8,30 +8,40 @@
 import SwiftUI
 
 struct PrimaryButton: View {
-    let isDisabled: Bool 
     let title: String
+    let isDisabled: Bool
+    let isLoading: Bool
     let action: () -> Void
 
-    init(title: String, isDisabled: Bool = false, action: @escaping () -> Void) {
+    init(title: String, isDisabled: Bool = false, isLoading: Bool = false, action: @escaping () -> Void) {
         self.title = title
-        self.action = action
         self.isDisabled = isDisabled
+        self.isLoading = isLoading
+        self.action = action
     }
     
     var body: some View {
         Button(action: action) {
-            Text(title)
-                .padding()
-                .frame(maxWidth: .infinity, maxHeight: .buttonHeight)
-                .background(isDisabled ? Color.gray : Color.primaryYellow)
-                .foregroundColor(Color.black)
-                .cornerRadius(.cornerRadiusMedium)
+            ZStack {
+                if isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .primary))
+                    
+                } else {
+                    Text(title)
+                        .font(.headline)
+                        .foregroundColor(.primary)
+                }
+            }
+            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .buttonHeight)
+            .background((isDisabled || isLoading) ? Color.gray : Color.primaryYellow)
+            .cornerRadius(.cornerRadiusMedium)
         }
         .padding()
-        .disabled(isDisabled)
+        .disabled(isDisabled || isLoading)
     }
 }
-
 #Preview {
     PrimaryButton(title: "Buscar", action: {})
 }

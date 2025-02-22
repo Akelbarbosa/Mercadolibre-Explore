@@ -20,7 +20,9 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelProtocol {
             VStack(spacing: .marginMedium) {
                 SearchBar(text: $viewModel.query, placeholder: "Buscar")
                 
-                PrimaryButton(title: "Buscar", isDisabled: viewModel.query.isEmpty) {}
+                PrimaryButton(title: "Buscar", isDisabled: viewModel.query.isEmpty, isLoading: viewModel.isLoading) {
+                    viewModel.tapSearch()
+                }
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

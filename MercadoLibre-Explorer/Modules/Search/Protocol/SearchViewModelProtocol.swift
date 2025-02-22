@@ -10,4 +10,7 @@ import Combine
 
 protocol SearchViewModelProtocol: AnyObject, ObservableObject {
     var query: String { get set }
+    var isLoading: Bool { get set }
+    
+    func tapSearch()
 }
