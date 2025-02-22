@@ -11,7 +11,8 @@ import SwiftUI
 struct MercadoLibre_ExplorerApp: App {
     var body: some Scene {
         WindowGroup {
-            Text("MercadoLibre-Explorer")
+            let viewModel = SearchViewModel()
+            SearchView(viewModel: viewModel)
         }
     }
 }
