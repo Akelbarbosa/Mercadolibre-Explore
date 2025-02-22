@@ -11,7 +11,7 @@ import SwiftUI
 struct MercadoLibre_ExplorerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Text("MercadoLibre-Explorer")
         }
     }
 }
