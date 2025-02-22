@@ -24,10 +24,9 @@ struct SearchBar: View {
             .cornerRadius(.cornerRadiusMedium)
             .padding(.horizontal)
             .foregroundColor(.primary)
-            .background(Color(.systemBackground))
+            .tint(.primary)
     }
-} 
-
+}
 #Preview {
     struct PreviewContainer: View {
         @State private var query = ""

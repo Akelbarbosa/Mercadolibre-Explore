@@ -25,12 +25,12 @@ struct PrimaryButton: View {
             ZStack {
                 if isLoading {
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .primary))
+                        .progressViewStyle(CircularProgressViewStyle(tint: .black))
                     
                 } else {
                     Text(title)
                         .font(.headline)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.black)
                 }
             }
             .padding()

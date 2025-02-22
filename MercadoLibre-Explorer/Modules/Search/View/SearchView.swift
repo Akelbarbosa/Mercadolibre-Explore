@@ -34,7 +34,6 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelProtocol {
         }
     }
     
-    
     @ViewBuilder
     private func listProduct() -> some View {
         ListProductsView(query: viewModel.query, results: viewModel.results)
