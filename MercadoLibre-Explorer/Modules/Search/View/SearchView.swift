@@ -25,13 +25,19 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelProtocol {
                 }
                 
                 .navigationDestination(isPresented: $viewModel.shouldNavigate) {
-                    ProductListView(query: viewModel.query, results: viewModel.results)
+                    listProduct()
                 }
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .navigationTitle("Buscar")
         }
+    }
+    
+    
+    @ViewBuilder
+    private func listProduct() -> some View {
+        ListProductsView(query: viewModel.query, results: viewModel.results)
     }
 }
 

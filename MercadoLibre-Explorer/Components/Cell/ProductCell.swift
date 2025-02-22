@@ -13,7 +13,6 @@ struct ProductCell: View {
     private let url: String
     private let title: String
     private let price: String
-    let imageSize: CGFloat = 150
 
     init(url: String, title: String, price: String) {
         self.url = url
@@ -23,39 +22,7 @@ struct ProductCell: View {
 
     var body: some View {
         HStack(spacing: .marginMedium) {
-            ZStack {
-                RoundedRectangle(cornerRadius: .cornerRadiusMedium)
-                    .frame(width: imageSize, height: imageSize)
-                    .foregroundColor(Color.clear)
-
-                if let validURL = URL(string: url.replacingOccurrences(of: "http://", with: "https://")),
-                   !url.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                    
-                    AsyncImage(url: validURL) { phase in
-                        switch phase {
-                        case .empty:
-                            ProgressView()
-                                .frame(width: imageSize, height: imageSize)
-
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: imageSize, height: imageSize )
-                                .clipShape(RoundedRectangle(cornerRadius: .cornerRadiusMedium))
-
-                        case .failure:
-                            placeholderImage
-
-                        @unknown default:
-                            placeholderImage
-                        }
-                    }
-                    
-                } else {
-                    placeholderImage
-                }
-            }
+            ProductImageView(url: url)
 
             VStack(alignment: .leading, spacing: .marginMedium) {
                 Text(title)
@@ -71,14 +38,6 @@ struct ProductCell: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-    }
-
-    private var placeholderImage: some View {
-        Image(systemName: "photo")
-            .resizable()
-            .scaledToFit()
-            .frame(width: imageSize, height: imageSize)
-            .foregroundColor(.gray)
     }
 }
 

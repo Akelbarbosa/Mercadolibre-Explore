@@ -17,22 +17,54 @@ class MercadoLibreAPI {
         self.session = session
     }
 
+//    func search(query: String) async throws -> [SearchResult] {
+//        guard let url = URL(string: "\(baseURL)\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")") else {
+//            throw APIError.invalidURL
+//        }
+//        
+//        let (data, response) = try await session.data(from: url)
+//        
+//        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+//            throw APIError.invalidResponse
+//        }
+//        
+//        do {
+//            let decodedResponse = try JSONDecoder().decode(APIResponse.self, from: data)
+//            return decodedResponse.results
+//        } catch {
+//            throw APIError.decodingFailed
+//        }
+//    }
+    
     func search(query: String) async throws -> [SearchResult] {
         guard let url = URL(string: "\(baseURL)\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")") else {
+            print("❌ Error: URL inválida")
             throw APIError.invalidURL
         }
         
-        let (data, response) = try await session.data(from: url)
-        
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            throw APIError.invalidResponse
-        }
-        
         do {
-            let decodedResponse = try JSONDecoder().decode(APIResponse.self, from: data)
-            return decodedResponse.results
+            let (data, response) = try await session.data(from: url)
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                print("❌ Error: Respuesta no válida")
+                throw APIError.invalidResponse
+            }
+            
+            guard httpResponse.statusCode == 200 else {
+                print("❌ Error: Código de estado HTTP \(httpResponse.statusCode)")
+                throw APIError.invalidResponse
+            }
+            
+            do {
+                let decodedResponse = try JSONDecoder().decode(APIResponse.self, from: data)
+                return decodedResponse.results
+            } catch {
+                print("❌ Error de decodificación: \(error.localizedDescription)")
+                throw APIError.decodingFailed
+            }
         } catch {
-            throw APIError.decodingFailed
+            print("❌ Error en la petición: \(error.localizedDescription)")
+            throw error
         }
     }
 }

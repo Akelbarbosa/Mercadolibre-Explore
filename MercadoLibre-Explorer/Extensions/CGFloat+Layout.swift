@@ -20,8 +20,11 @@ extension CGFloat {
 
     static let buttonHeight: CGFloat = 44
     static let textFieldHeight: CGFloat = 44
+    static let imageMedium: CGFloat = 150
 
     static let cornerRadiusSmall: CGFloat = 4
     static let cornerRadiusMedium: CGFloat = 8
     static let cornerRadiusLarge: CGFloat = 16
+    
+    
 }
