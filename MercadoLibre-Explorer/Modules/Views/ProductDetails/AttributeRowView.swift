@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AttributeRowView: View {
-    var attribute: ProductAttribute
+    var attribute: ProductAttributeEntity
     var isGray: Bool
 
     var body: some View {

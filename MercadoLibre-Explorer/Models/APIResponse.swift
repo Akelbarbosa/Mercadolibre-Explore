@@ -8,5 +8,5 @@
 import Foundation
 
 struct APIResponse: Decodable {
-    let results: [SearchResult]
+    let results: [SearchResultEntity]
 }

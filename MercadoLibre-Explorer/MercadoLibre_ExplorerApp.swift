@@ -13,6 +13,7 @@ struct MercadoLibre_ExplorerApp: App {
         WindowGroup {
             let viewModel = SearchViewModel()
             SearchView(viewModel: viewModel)
+                .tint(.primary)
         }
     }
 }

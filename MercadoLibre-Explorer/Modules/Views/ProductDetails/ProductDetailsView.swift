@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ProductDetailsView: View {
-    var product: SearchResult
+    var product: SearchResultEntity
 
-    init(product: SearchResult) {
+    init(product: SearchResultEntity) {
         self.product = product
     }
     
@@ -23,12 +23,12 @@ struct ProductDetailsView: View {
             .padding(.horizontal, .layoutOffsetLarge)
             .frame(maxWidth: .infinity)
             .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .clipShape(RoundedRectangle(cornerRadius: .cornerRadiusMedium))
         }
         .background(Color.primaryYellow.ignoresSafeArea())
     }
 }
 
 #Preview {
-    ProductDetailsView(product: SearchResult(id: "1", title: "iPhone 15", price: 3999.99, thumbnail: "http://http2.mlstatic.com/D_702740-CBT81492251579_122024-I.jpg", attributes: []))
+    ProductDetailsView(product: SearchResultEntity(id: "1", title: "iPhone 15", price: 3999.99, thumbnail: "http://http2.mlstatic.com/D_702740-CBT81492251579_122024-I.jpg", attributes: []))
 }

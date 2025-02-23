@@ -32,11 +32,12 @@ struct ProductCell: View {
 
                 Text(price)
                     .font(.callout)
-                    .foregroundStyle(Color.primary)
+                    .foregroundStyle(Color.black)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .background(Color.white)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

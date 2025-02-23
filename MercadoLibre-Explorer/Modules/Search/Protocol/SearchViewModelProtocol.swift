@@ -11,7 +11,7 @@ import Combine
 protocol SearchViewModelProtocol: AnyObject, ObservableObject {
     var query: String { get set }
     var isLoading: Bool { get set }
-    var results: [SearchResult]  { get set }
+    var results: [SearchResultEntity]  { get set }
     var shouldNavigate: Bool { get set }
     
     func tapSearch()

@@ -31,6 +31,7 @@ struct SearchView<ViewModel>: View where ViewModel: SearchViewModelProtocol {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             .navigationTitle("Buscar")
+            .toolbarColorScheme(.light, for: .navigationBar)
         }
     }
     

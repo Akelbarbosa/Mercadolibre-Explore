@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductHeaderView: View {
-    var product: SearchResult
+    var product: SearchResultEntity
 
     var body: some View {
         VStack(spacing: .marginMedium) {

@@ -1,5 +1,5 @@
 //
-//  SearchResult.swift
+//  ProductAttributeEntity.swift
 //  MercadoLibre-Explorer
 //
 //  Created by Akel Barbosa on 22/02/25.
@@ -7,16 +7,7 @@
 
 import Foundation
 
-struct SearchResult: Decodable {
-    let id: String
-    let title: String
-    let price: Double
-    let thumbnail: String
-    let attributes: [ProductAttribute]
-}
-
-
-struct ProductAttribute: Decodable {
+struct ProductAttributeEntity: Decodable {
     let id: String
     let name: String
     let valueName: String?

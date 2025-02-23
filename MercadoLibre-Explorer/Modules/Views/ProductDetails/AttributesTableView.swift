@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AttributesTableView: View {
-    var attributes: [ProductAttribute]
+    var attributes: [ProductAttributeEntity]
 
     var body: some View {
         VStack(spacing: 0) {
@@ -16,7 +16,7 @@ struct AttributesTableView: View {
                 AttributeRowView(attribute: attribute, isGray: index.isMultiple(of: 2))
             }
         }
-        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .clipShape(RoundedRectangle(cornerRadius: .cornerRadiusMedium))
         .padding(.vertical, .marginMedium)
     }
 }

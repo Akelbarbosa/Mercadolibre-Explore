@@ -11,7 +11,7 @@ import Combine
 
 final class SearchViewModel: SearchViewModelProtocol {
     @Published var query: String = ""
-    @Published var results: [SearchResult] = []
+    @Published var results: [SearchResultEntity] = []
     @Published var errorMessage: String?
     @Published var isLoading = false
     @Published var shouldNavigate = false
