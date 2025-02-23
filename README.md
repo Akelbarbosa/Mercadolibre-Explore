@@ -21,8 +21,8 @@ A continuación, se presentan capturas de pantalla en diferentes dispositivos, m
 ### 📌 Pantalla de Búsqueda  
 | Modo Claro | Modo Oscuro |
 |------------|------------|
-| ![Search View - Portrait Light](Screenshots/search_portrait_light.png) | ![Search View - Portrait Dark](Screenshots/search_portrait_dark_with_text.png) |
-| ![Search View - Landscape Light](Screenshots/search_landscape_light.png) |  |
+| ![Search View - Portrait Light](Screenshots/search_portrait_light.png) | ![Search View - Portrait Dark](Screenshots/search_portrait_dark.png) |
+| ![Search View - Landscape Light](Screenshots/search_landscape_light.png) | ![Search View - Landscape Light](Screenshots/search_landscape_dark.png) |
 
 ---
 
