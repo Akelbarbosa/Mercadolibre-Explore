@@ -22,4 +22,10 @@ struct ProductAttributeEntity: Decodable {
         name = try container.decode(String.self, forKey: .name)
         valueName = try container.decodeIfPresent(String.self, forKey: .valueName)
     }
+    
+    init(id: String, name: String, valueName: String?) {
+        self.id = id
+        self.name = name
+        self.valueName = valueName
+    }
 }

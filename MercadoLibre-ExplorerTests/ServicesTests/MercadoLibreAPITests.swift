@@ -36,7 +36,24 @@ class MercadoLibreAPITests: XCTestCase {
                     "id": "MLA123456",
                     "title": "Producto de prueba",
                     "price": 1000.50,
-                    "thumbnail": "http://example.com/image.jpg"
+                    "thumbnail": "http://example.com/image.jpg",
+                    "attributes": [
+                        {
+                            "id": "COLOR",
+                            "name": "Color",
+                            "value_name": "Negro"
+                        },
+                        {
+                            "id": "STORAGE",
+                            "name": "Capacidad",
+                            "value_name": "256GB"
+                        },
+                        {
+                            "id": "SCREEN",
+                            "name": "Pantalla",
+                            "value_name": "6.1 pulgadas"
+                        }
+                    ]
                 }
             ]
         }

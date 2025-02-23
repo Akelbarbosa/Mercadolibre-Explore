@@ -27,6 +27,7 @@ struct SearchBar: View {
             .tint(.primary)
     }
 }
+
 #Preview {
     struct PreviewContainer: View {
         @State private var query = ""

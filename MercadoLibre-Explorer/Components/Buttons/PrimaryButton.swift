@@ -42,6 +42,7 @@ struct PrimaryButton: View {
         .disabled(isDisabled || isLoading)
     }
 }
+
 #Preview {
     PrimaryButton(title: "Buscar", action: {})
 }
