@@ -13,6 +13,7 @@ protocol SearchViewModelProtocol: AnyObject, ObservableObject {
     var isLoading: Bool { get set }
     var results: [SearchResultEntity]  { get set }
     var shouldNavigate: Bool { get set }
+    var errorMessage: String? { get set }
     
     func tapSearch()
 }
